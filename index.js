@@ -21,7 +21,11 @@ client.on('ready', () => {
 	client.user.setActivity(activity, { type: ActivityType.Listening });
 	client.user.setStatus('idle');
 });
-module.exports = client.on;
+client.on('messageCreate', (message) => {
+	if (message.content === 'testcode') {
+		message.reply('Hey!');
+	}
+});
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
