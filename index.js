@@ -5,27 +5,26 @@ const { ActivityType } = require('discord.js');
 const { activity, slashErrorReply } = require('./config.json');
 const { token } = require('./vault.json');
 
-const client = new Client({ intents: [
-	GatewayIntentBits.DirectMessages,
-	GatewayIntentBits.Guilds,
-	GatewayIntentBits.GuildMessages,
-	GatewayIntentBits.MessageContent] });
-
-client.once(Events.ClientReady, readyClient => {
-	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
-});
-
-client.login(token);
-client.commands = new Collection();
-client.on('ready', () => {
-	client.user.setActivity(activity, { type: ActivityType.Listening });
-	client.user.setStatus('idle');
-});
-client.on('messageCreate', (message) => {
-	if (message.content === 'testcode') {
-		message.reply('Hey!');
+const client = new Client({
+	intents: [
+		GatewayIntentBits.DirectMessages,
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent
+	],
+	presence: {
+		activities: [
+			{
+				name: activity,
+				type: ActivityType.Listening
+			}
+		],
+		status: "idle"
 	}
 });
+
+client.commands = new Collection();
+
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
@@ -38,34 +37,19 @@ for (const folder of commandFolders) {
 		// Set a new item in the Collection with the key as the command name and the value as the exported module
 		if ('data' in command && 'execute' in command) {
 			client.commands.set(command.data.name, command);
-		}
-		else {
+		} else {
 			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
 		}
 	}
 }
 
-client.on(Events.InteractionCreate, async interaction => {
-	if (!interaction.isChatInputCommand()) return;
+const eventsPath = path.join(__dirname, 'events');
+const eventFiles = fs.readdirSync("./events").filter((file) => file.endsWith(".js"));
+for (const file of eventFiles) {
+	const filePath = path.join(eventsPath, file);
+	const event = require(filePath);
 
-	const command = interaction.client.commands.get(interaction.commandName);
+	client[event.once ? 'once' : 'on'](event.name, event.execute);
+}
 
-	if (!command) {
-		console.error(`No command matching ${interaction.commandName} was found.`);
-		return;
-	}
-
-	try {
-		await command.execute(interaction);
-	}
-	catch (error) {
-		console.error(error);
-		if (interaction.replied || interaction.deferred) {
-			await interaction.followUp({ content: slashErrorReply, ephemeral: true });
-		}
-		else {
-			await interaction.reply({ content: slashErrorReply, ephemeral: true });
-		}
-	}
-});
-
+client.login(token);
