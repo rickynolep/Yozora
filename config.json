@@ -3,8 +3,17 @@
     "slashErrorReply" : "Ah! sorry banget masbro ada masalah sama commandnya, coba tanya ricky soal masalah ini >,<",
     "autoResponses": [
         {
-            "trigger": "pagi",
-            "response": "Awoo.. selamat pagi!!"
+            "trigger": "Pagi",
+            "response": "Oagii.. apa kabar kalian? ada rencana apa kalian pagi ini?"
+        }, {
+            "trigger": "Siang",
+            "response": "Met siang, biasanya siang siang gini panes bet, mager keluar bjir"
+        }, {
+            "trigger": "Sore",
+            "response": "Sore semuanya!, udh mandi belom?"
+        }, {
+            "trigger": "Malam",
+            "response": "Malem gais, btw kerjaan kalian udh kelar semua? kalo udh jangan begadang yah ntar jadi panda awikawokaowk"
         }
     ]
 }
