@@ -3,17 +3,23 @@
     "slashErrorReply" : "Ah! sorry banget masbro ada masalah sama commandnya, coba tanya ricky soal masalah ini >,<",
     "autoResponses": [
         {
-            "trigger": "Pagi",
+            "trigger": "pagi",
             "response": "Oagii.. apa kabar kalian? ada rencana apa kalian pagi ini?"
         }, {
-            "trigger": "Siang",
+            "trigger": "siang",
             "response": "Met siang, biasanya siang siang gini panes bet, mager keluar bjir"
         }, {
-            "trigger": "Sore",
+            "trigger": "sore",
             "response": "Sore semuanya!, udh mandi belom?"
         }, {
-            "trigger": "Malam",
+            "trigger": "malam",
             "response": "Malem gais, btw kerjaan kalian udh kelar semua? kalo udh jangan begadang yah ntar jadi panda awikawokaowk"
+        }, {
+            "trigger": "sepi",
+            "response": "Namanya juga server baru, membernya baru dikit, jelas lah sepi ngab... RAMEIN DONK!"
+        }, {
+            "trigger": "p",
+            "response": "Sopan bgt kamu"
         }
     ]
 }

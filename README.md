@@ -4,7 +4,8 @@ yozora is an http interactions discord bot that using discordeno for its code, s
 
 ## Changelog:
 ### 2.0.1 (20 Jan 2024)
-- Adding an Autorespond (Testing)
+- Adding Autoresponds (Testing)
+- Fixing some issue and cleaning some codes (thanks @ini.tokyo)
 
 ### 2.0.0 (20 Des 2023)
 - Added Help command
