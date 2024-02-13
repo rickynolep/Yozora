@@ -4,7 +4,6 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { ActivityType } = require('discord.js');
 const { activity } = require('./config.json');
 const { token } = require('./vault.json');
-
 const client = new Client({
 	intents: [
 		GatewayIntentBits.DirectMessages,
@@ -24,7 +23,6 @@ const client = new Client({
 });
 
 client.commands = new Collection();
-
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 

@@ -1,5 +1,5 @@
-const { EmbedBuilder } = require('discord.js');
 const { SlashCommandBuilder } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const helpEmbed = new EmbedBuilder()
 	.setTitle('Hawlo! Aku Yozora, Bot Maskot Server Ini!')
 	.setDescription(
