@@ -2,7 +2,7 @@
 
 yozora is an http interactions discord bot created by Ricky using discordeno for its code, since discord deno is really hard to maintained and lack of knowledge from the developer (yes me dumb) I've made a decision to discontinued the project, ~~but still running to this day~~. As replacement Yozora V2 has released with a few tweaks and using different code language (discord.js)
 
-## Server and Contributions:
+## Server and Contributions
 Pull request is accepted and this bot is really need a contributions, you can join this server for support and help the developtment of the project
 (keep in mind this server dont support multilingual for now, only indonesian.. contact me for support on english language)
 https://discord.com/invite/pAxmeD3kDj
