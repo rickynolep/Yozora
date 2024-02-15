@@ -1,3 +1,6 @@
+![yozora](https://github.com/rickynolep/yozora-v2/assets/94543253/7c0fcd5b-4ade-4dc7-940a-4b4393cfe01a)
+
+
 # About Yozora V2
 
 yozora is an http interactions discord bot created by Ricky using discordeno for its code, since discord deno is really hard to maintained and lack of knowledge from the developer (yes me dumb) I've made a decision to discontinued the project, ~~but still running to this day~~. As replacement Yozora V2 has released with a few tweaks and using different code language (discord.js)
