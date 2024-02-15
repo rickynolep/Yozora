@@ -1,17 +1,13 @@
-<h1 align="center">
-  <img scr="https://raw.githubusercontent.com/rickynolep/yozora-v2/main/media/YozoraIcon.png" width="490" height="490">
+<h1 align=center>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/qY4NSd6/yozora.png" alt="yozora" border="0" width="300" height="300"></a>
   <br>
-  JavaScript Standard Style
+  Yozora V2
   <br>
-  <br>
+  English</a> •
+  <a href="README-ID.md">Indonesia</a>
 </h1>
-
-
-
-
-# About Yozora V2
-
 yozora is an http interactions discord bot created by Ricky using discordeno for its code, since discord deno is really hard to maintained and lack of knowledge from the developer (yes me dumb) I've made a decision to discontinued the project, ~~but still running to this day~~. As replacement Yozora V2 has released with a few tweaks and using different code language (discord.js)
+<br>
 
 ## Server and Contributions
 Pull request is accepted and this bot is really need a contributions, you can join this server for support and help the developtment of the project
