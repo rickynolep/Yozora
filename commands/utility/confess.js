@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { ChannelType, SlashCommandBuilder } = require('discord.js');
 const { channelNotFound } = require('../../config.json');
 const targetChannelId = '1129380135699755098';
 
@@ -14,7 +14,7 @@ module.exports = {
 		const content = interaction.options.getString('content');
 		try {
 			const targetChannel = interaction.client.channels.cache.get(targetChannelId);
-			if (!targetChannel || targetChannel.type !== 'GUILD_TEXT') {
+			if (targetChannel?.type !== ChannelType.GuildText) {
 				await interaction.reply({ content: channelNotFound, ephemeral: true });
 				return;
 			}
