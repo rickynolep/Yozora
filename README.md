@@ -1,4 +1,12 @@
-![yozora](https://github.com/rickynolep/yozora-v2/assets/94543253/7c0fcd5b-4ade-4dc7-940a-4b4393cfe01a)
+<h1 align="center">
+  <img scr="https://raw.githubusercontent.com/rickynolep/yozora-v2/main/media/YozoraIcon.png" width="490" height="490">
+  <br>
+  JavaScript Standard Style
+  <br>
+  <br>
+</h1>
+
+
 
 
 # About Yozora V2
