@@ -22,8 +22,6 @@ for (const folder of commandFolders) {
 	}
 }
 
-console.log(commands);
-
 const rest = new REST().setToken(token);
 (async () => {
 	try {
