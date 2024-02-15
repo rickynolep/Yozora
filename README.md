@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img scr="https://raw.githubusercontent.com/rickynolep/yozora-v2/main/media/YozoraIcon.png" width="490" height="490">
+  <img alt="Yozora V2" scr="YozoraIcon.png" width="490" height="490">
   <br>
   JavaScript Standard Style
   <br>
