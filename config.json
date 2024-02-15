@@ -1,6 +1,7 @@
 {
     "activity" : "user feedback",
     "slashErrorReply" : "Ah! sorry banget masbro ada masalah sama commandnya, coba tanya ricky soal masalah ini >,<",
+    "channelNotFound" : "Ah! sorry banget masbro, ada masalah sama channel tujuan atau channel tujuan tidak tersedia, coba tanya ricky soal masalah ini >,<",
     "autoResponses": [
         {
             "trigger": "pagi",
