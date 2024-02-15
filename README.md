@@ -1,7 +1,7 @@
 <h1 align="center">
-  <img alt="Yozora V2" scr="YozoraIcon.png" width="490" height="490">
+  <img alt="Yozora V2" scr="https://i.ibb.co/qY4NSd6/yozora.png">
   <br>
-  JavaScript Standard Style
+  About Yozora V2
   <br>
   <br>
 </h1>
