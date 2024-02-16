@@ -1,6 +1,5 @@
 const { ChannelType, SlashCommandBuilder } = require('discord.js');
-const { channelNotFound } = require('../../config.json');
-const targetChannelId = '1129380135699755098';
+const { channelNotFound, targetChannelId } = require('../../config.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
