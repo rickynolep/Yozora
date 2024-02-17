@@ -3,7 +3,7 @@
   <br>
   Yozora V2
   <br>
-  <a herf="README.md">English</a> • Indonesia
+  <a herf="README-EN.md">English</a> • Indonesia
 </h1>
 yozora adalah bot discord interaksi http yang dibuat oleh Ricky menggunakan discordeno untuk kodenya, karena discord deno sangat sulit dipertahankan dan kurangnya pengetahuan dari pengembang (ya saya bodoh) Saya telah membuat keputusan untuk menghentikan proyek, ~~tapi masih berjalan sampai hari ini~~. Sebagai penggantinya Yozora V2 telah dirilis dengan beberapa penyesuaian dan menggunakan bahasa kode yang berbeda (discord.js)
 <br>
