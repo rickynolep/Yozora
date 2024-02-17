@@ -1,7 +1,12 @@
 {
     "activity" : "user feedback",
-    "slashErrorReply" : "Ah! sorry banget masbro ada masalah sama commandnya, coba tanya ricky soal masalah ini >,<",
-    "channelNotFound" : "Ah! sorry banget masbro, ada masalah sama channel tujuan atau channel tujuan tidak tersedia, coba tanya ricky soal masalah ini >,<",
+    "botStatus" : "idle",
+
+    "errorSlash" : "Ah! sorry banget masbro ada masalah sama Slash Commandnya, coba tanya ricky soal masalah ini >,<",
+    "errorExecuting" : "Ah! sorry banget masbro ada masalah saat mengeksekusi Commandnya, coba tanya ricky soal masalah ini >,<",
+    "errorInvalidColor" : "Warna tidak valid. Pastikan Anda menggunakan [kode hex](https://www.google.com/search?q=Pemilih+warna) yang valid.",
+    "errorTargetChannel" : "Ah! sorry banget masbro, ada masalah sama channel tujuan atau channel tujuan tidak tersedia, coba tanya ricky soal masalah ini >,<",
+    
     "targetChannelId" : "1129380135699755098",
     "autoResponses": [
         {

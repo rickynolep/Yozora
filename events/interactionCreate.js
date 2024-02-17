@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { slashErrorReply } = require('../config.json');
+const { errorSlash } = require('../config.json');
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -19,10 +19,10 @@ module.exports = {
 		catch (error) {
 			console.error(error);
 			if (interaction.replied || interaction.deferred) {
-				await interaction.followUp({ content: slashErrorReply, ephemeral: true });
+				await interaction.followUp({ content: errorSlash, ephemeral: true });
 			}
 			else {
-				await interaction.reply({ content: slashErrorReply, ephemeral: true });
+				await interaction.reply({ content: errorSlash, ephemeral: true });
 			}
 		}
 	},
