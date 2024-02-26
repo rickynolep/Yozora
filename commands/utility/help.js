@@ -4,7 +4,7 @@ const { launchType } = require('../../vault.json');
 
 // Determine the current mode based on launchType
 let currentMode;
-if (launchType === 'Local') { currentMode = 'Local (Computer)'; }
+if (launchType === 'Local') { currentMode = 'Local (Computer Ricky)'; }
 else if (launchType === 'Server') { currentMode = 'Server (Pylexnode Server)'; }
 else { currentMode = 'Unknown'; }
 

@@ -1,5 +1,5 @@
 const { ChannelType, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const { errorTargetChannel, errorExecuting, errorInvalidColor, targetChannelId } = require('../../config.json');
+const { errorTargetChannel, errorExecuting, errorInvalidColor, confessChannelId } = require('../../config.json');
 function getColorHex(colorName) {
 	const isHexCode = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(colorName);
 	if (isHexCode) {
@@ -39,7 +39,7 @@ module.exports = {
 			return;
 		}
 		try {
-			const targetChannel = interaction.client.channels.cache.get(targetChannelId);
+			const targetChannel = interaction.client.channels.cache.get(confessChannelId);
 			if (targetChannel?.type !== ChannelType.GuildText) {
 				await interaction.reply({ content: errorTargetChannel, ephemeral: true });
 				return;
