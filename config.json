@@ -7,6 +7,7 @@
     "errorInvalidColor" : "Warna tidak valid. Pastikan Anda menggunakan [kode hex](https://www.google.com/search?q=Pemilih+warna) yang valid.",
     "errorTargetChannel" : "Ah! sorry banget masbro, ada masalah sama channel tujuan atau channel tujuan tidak tersedia, coba tanya ricky soal masalah ini >,<",
     
+    "joinActivityId" : "1118248247388012744",
     "confessChannelId" : "1129380135699755098",
     "onlineChannelId" : "1117809432932393134",
     "autoResponses": [
@@ -21,6 +22,24 @@
             "response": "Sore semuanya!, udh mandi belom?"
         }, {
             "trigger": "malam",
+            "response": "Malem gais, btw kerjaan kalian udh kelar semua? kalo udh jangan begadang yah ntar jadi panda awikawokaowk"
+        }, {
+            "trigger": "malem",
+            "response": "Malem gais, btw kerjaan kalian udh kelar semua? kalo udh jangan begadang yah ntar jadi panda awikawokaowk"
+        }, {
+            "trigger": "selamat pagi",
+            "response": "Oagii.. apa kabar kalian? ada rencana apa kalian pagi ini?"
+        }, {
+            "trigger": "selamat siang",
+            "response": "Met siang, biasanya siang siang gini panes bet, mager keluar bjir"
+        }, {
+            "trigger": "selamat sore",
+            "response": "Sore semuanya!, udh mandi belom?"
+        }, {
+            "trigger": "selamat malam",
+            "response": "Malem gais, btw kerjaan kalian udh kelar semua? kalo udh jangan begadang yah ntar jadi panda awikawokaowk"
+        }, {
+            "trigger": "selamat malem",
             "response": "Malem gais, btw kerjaan kalian udh kelar semua? kalo udh jangan begadang yah ntar jadi panda awikawokaowk"
         }, {
             "trigger": "sepi",
