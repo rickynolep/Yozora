@@ -1,3 +1,4 @@
+// intro.js
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 function getColorHex(colorName) {
@@ -21,10 +22,6 @@ module.exports = {
                 .setDescription('ada kata kata perkenalan? contoh: salken')
                 .setRequired(true))
         .addStringOption(option =>
-            option.setName('age')
-                .setDescription('Berapa umurmu?')
-                .setRequired(false))
-        .addStringOption(option =>
             option.setName('hobby')
                 .setDescription('Apa Hobimu?')
                 .setRequired(false))
@@ -38,9 +35,8 @@ module.exports = {
                 .setRequired(false)),
     async execute(interaction) {
         const user = interaction.user;
-        const thumbnailURL = 'https://example.com/static-thumbnail.jpg';
+        let thumbnailURL = user.avatarURL({ size: 512 })
         const name = interaction.options.getString('name');
-        const age = interaction.options.getString('age') || '-';
         const hobby = interaction.options.getString('hobby') || '-';
         const location = interaction.options.getString('location') || '-';
         const description = interaction.options.getString('description');
@@ -55,7 +51,7 @@ module.exports = {
             .setColor(color)
             .setTitle('Perkenalkan')
             .setThumbnail(thumbnailURL)
-            .setDescription(`Nama: ${name}\nUmur: ${age}\nHobi: ${hobby}\nDaerah asal: ${location}\n\n${description}`);
+            .setDescription(`Nama: ${name}\nHobi: ${hobby}\nDaerah asal: ${location}\n\n${description}`);
 
         await interaction.reply({ embeds: [introEmbed] });
     },
