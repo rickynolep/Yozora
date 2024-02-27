@@ -1,0 +1,8 @@
+// this is example vault.json
+
+{
+    "token" : "your-discord-bot-token",
+    "clientId" : "your-client-bot-id",
+    "guildId" : "your-guild-id",
+    "launchType" : "Local" // "Local" means bot running on your computer, "Server" means bot running on your server 
+}
