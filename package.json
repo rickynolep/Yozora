@@ -5,6 +5,12 @@
   "dependencies": {
   
     
+  "canvas": "^2.11.2",
+  
+    
+  "canvas-constructor": "^7.0.1",
+  
+    
   "discord.js": "^14.12.1",
   
     
