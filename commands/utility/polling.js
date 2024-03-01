@@ -2,7 +2,6 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { ButtonBuilder, EmbedBuilder, ActionRowBuilder } = require('discord.js');
 const activeCollectors = new Map();
 
-// Function to generate the bar based on the percentage
 function generateBar(percentage1, percentage2) {
     const redLength = Math.round(percentage1 / 10);
     const blueLength = Math.round(percentage2 / 10);
@@ -37,11 +36,15 @@ module.exports = {
                 .addStringOption(option =>
                     option.setName('blue')
                         .setDescription('Polling kedua dengan warna biru')
-                        .setRequired(true)))
-
+                        .setRequired(true))
+                .addStringOption(option =>
+                    option.setName('durations')
+                        .setDescription('Durasi polling berlangsung dalam menit, default 20 menit')
+                        .setRequired(false)))
         .addSubcommand(subcommand =>
             subcommand.setName('end')
                 .setDescription('Mengakhiri polling yang sedang aktif')),
+
     async execute(interaction) {
         if (interaction.options.getSubcommand() === 'end') {
             const collector = activeCollectors.get(interaction.guildId);
@@ -63,14 +66,19 @@ module.exports = {
             const title = interaction.options.getString('title');
             const red = interaction.options.getString('red');
             const blue = interaction.options.getString('blue');
+            const voteDurations = interaction.options.getString('durations') || '20';
+            const currentTime = new Date();
+            const endTime = new Date(currentTime.getTime() + voteDurations * 60000);
+            const formattedEndTime = endTime.toLocaleString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true });
             const userVotes = new Map();
             let percentage1 = 50;
             let percentage2 = 50;
             let initialBar = generateBar(percentage1, percentage2);
             const embed = new EmbedBuilder()
                 .setTitle(title)
-                .setDescription(`${red} - ${percentage1.toFixed(2)}%\n${blue} - ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${initialBar}<:RE:1213064897353621504>`)
-                .setColor('#0099ff');
+                .addFields({ name: 'Progress voting saat ini', value: `${percentage1.toFixed(2)}%ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${initialBar}<:RE:1213064897353621504>`})
+                .setColor('#0099ff')
+                .setFooter({ text: `Voting akan berakhir dalam ${voteDurations} menit ・ ${formattedEndTime} WITA`});
             const row = new ActionRowBuilder()
                 .addComponents(
                     new ButtonBuilder()
@@ -85,13 +93,13 @@ module.exports = {
 
             const initialMessage = await interaction.reply({ embeds: [embed], components: [row], fetchReply: true });
             const filter = (i) => i.isButton() && i.message.id === initialMessage.id;
-            const collector = initialMessage.createMessageComponentCollector({ filter, time: 600000 });
+            const collector = initialMessage.createMessageComponentCollector({ filter, time: voteDurations * 60 * 1000 });
             activeCollectors.set(interaction.guildId, collector);
 
             collector.on('collect', async (buttonInteraction) => {
                 if (buttonInteraction.isButton()) {
                     if (userVotes.has(buttonInteraction.user.id)) {
-                        await buttonInteraction.reply({ content: "Anda sudah melakukan voting!", ephemeral: true });
+                        await buttonInteraction.reply({ content: "Hey, kamu sudah voting!", ephemeral: true });
                         return;
                     }
                     userVotes.set(buttonInteraction.user.id, buttonInteraction.customId);
@@ -101,13 +109,16 @@ module.exports = {
                     percentage1 = (redVotes / totalVotes) * 100;
                     percentage2 = (blueVotes / totalVotes) * 100;
                     const indicatorBar = generateBar(percentage1, percentage2);
-                    embed.setDescription(`${red} - ${percentage1.toFixed(2)}%\n${blue} - ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${indicatorBar}<:RE:1213064897353621504>`);
+                    embed.setFields({ name: 'Progress voting saat ini', value: `${percentage1.toFixed(2)}%ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${indicatorBar}<:RE:1213064897353621504>`});
                     await initialMessage.edit({ embeds: [embed] });
                     buttonInteraction.deferUpdate();
                 }
             });
-                collector.on('end', async () => {
+
+            collector.on('end', async () => {
+                const indicatorBar = generateBar(percentage1, percentage2);
                 embed.setFooter({ text: 'Polling telah berakhir!'});
+                embed.setFields({ name: 'Hasil voting', value: `${percentage1.toFixed(2)}%ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${indicatorBar}<:RE:1213064897353621504>`});
                 await initialMessage.edit({ embeds: [embed] });
                 activeCollectors.delete(interaction.guildId);
                 const disabledButton = new ActionRowBuilder()
@@ -123,7 +134,6 @@ module.exports = {
                                 .setStyle(1)
                                 .setDisabled(true));
                 await initialMessage.edit({ components: [disabledButton] });
-                embed.setDescription(`${red} - ${percentage1.toFixed(2)}%\n${blue} - ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${initialBar}<:RE:1213064897353621504>`);
             });
         }
     },
