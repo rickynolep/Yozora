@@ -6,9 +6,7 @@
   English</a> •
   <a href="README-ID.md">Indonesia</a>
 </h1>
-yozora is an http interactions discord bot created by Ricky using discordeno for its code, since discord deno is really hard to maintained and lack of knowledge from the developer (yes me dumb) I've made a decision to discontinued the project, ~~but still running to this day~~ As replacement Yozora V2 has released with a few tweaks and using different code language (discord.js)
-
-Updates: It's now officially called Yozora, but version code will still using v2.x.x 
+Next generation of Yozora, YozoraV2 using different code language (nodejs - discordjs) and running under Rikomunity management, discontinuing Yozora v0 and v1, a.k.a legacyyozora
 <br>
 
 ## Server and Contributions
