@@ -33,7 +33,6 @@ module.exports = {
 				.setDescription('Dari mana kamu?')
 				.setRequired(false)),
 	async execute(interaction) {
-		await interaction.deferReply();
 		const user = interaction.user;
 		const filename = `avatar.${user.avatar?.startsWith('a_') ? 'gif' : 'png'}`;
 		const avatar = new AttachmentBuilder(user.displayAvatarURL(), { name: filename });
@@ -44,7 +43,7 @@ module.exports = {
 		const colorInput = interaction.options.getString('color') || '#0099ff';
 		const color = getColorHex(colorInput);
 		if (!color) {
-			await interaction.reply({ content: 'Warna tidak valid. Pastikan Anda menggunakan [kode hex](https://www.google.com/search?q=Pemilih+warna) yang valid.', ephemeral: true });
+			await interaction.reply({ content: 'Sorry masbro, Warnanya tidak valid. Pastikan kamu menggunakan [kode hex](https://www.google.com/search?q=Pemilih+warna) yang valid. Contoh: #123ABC, atau kosongkan saja kalau mau pakai warna default', ephemeral: true });
 			return;
 		}
 
@@ -54,6 +53,6 @@ module.exports = {
 			.setThumbnail(`attachment://${filename}`)
 			.setDescription(`Nama: ${name}\nHobi: ${hobby}\nDaerah asal: ${location}\n\n${description}`);
 
-		await interaction.editReply({ embeds: [introEmbed], files: [avatar] });
+		await interaction.reply({ embeds: [introEmbed], files: [avatar] });
 	},
 };

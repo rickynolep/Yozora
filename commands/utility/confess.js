@@ -1,4 +1,4 @@
-const { ChannelType, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { ChannelType, SlashCommandBuilder, EmbedBuilder, MessageAttachment, AttachmentBuilder } = require('discord.js');
 const { errorTargetChannel, errorExecuting, errorInvalidColor, confessChannelId } = require('../../config.json');
 function getColorHex(colorName) {
 	const isHexCode = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(colorName);
@@ -12,7 +12,6 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('confess')
 		.setDescription('Mengutarakan perasaanmu atau isi pikiranmu secara rahasia')
-
 		.addStringOption(option =>
 			option.setName('content')
 				.setDescription('Utarakan isi hatimu disini!')
@@ -47,20 +46,22 @@ module.exports = {
 			const attachment = interaction.options.getAttachment('image');
 			let imageUrl = null;
 			if (attachment) {
-				if (attachment.contentType.startsWith('image/')) {
-					imageUrl = attachment.url;
-				}
-			}
+
+				const attachmentData = new AttachmentBuilder(attachment.url);
+				await interaction.reply({ content: 'Memproses gambarmu nih, tunggu dulu yaa.. <a:Shiggy:1206861664838877225>', ephemeral: true });
+				const uploadedAttachment = await targetChannel.send({ files: [attachmentData] });
+				imageUrl = uploadedAttachment.attachments.first().url;
+				await uploadedAttachment.delete();
+            }
 			const embed = new EmbedBuilder()
 				.setTitle(title)
 				.setDescription(content)
-				.setColor(color);
-			if (imageUrl) {
-				embed.setImage(imageUrl);
-			}
-
+				.setColor(color)
+			if (imageUrl) {embed.setImage(imageUrl);}
 			await targetChannel.send({ embeds: [embed] });
-			await interaction.reply({ content: 'Terkirim! Jangan terlalu terbuka yah biar gak ketauan <a:Shiggy:1206861664838877225>', ephemeral: true });
+			if (attachment) {
+				await await interaction.editReply({ content: 'Terkirim! Jangan terlalu terbuka yah biar gak ketauan <a:Shiggy:1206861664838877225>', ephemeral: true });
+			} else {await interaction.reply({ content: 'Terkirim! Jangan terlalu terbuka yah biar gak ketauan <a:Shiggy:1206861664838877225>', ephemeral: true });}
 		}
 		catch (error) {
 			console.error('Error executing confess command:', error);
