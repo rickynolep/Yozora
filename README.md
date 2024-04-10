@@ -15,6 +15,9 @@ Pull request is accepted and this bot is really need a contributions, you can jo
 https://discord.com/invite/pAxmeD3kDj
 
 ## Changelog:
+### 2.0.4+
+- See on Releases Tab
+
 ### 2.0.3 (17 Jan 2024)
 - Added Confession command
 - Fixing some bugs and cleaning some codes
