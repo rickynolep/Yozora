@@ -15,23 +15,4 @@ Pull request is accepted and this bot is really need a contributions, you can jo
 https://discord.com/invite/pAxmeD3kDj
 
 ## Changelog:
-### 2.0.4+
-- See on Releases Tab
-
-### 2.0.3 (17 Jan 2024)
-- Added Confession command
-- Fixing some bugs and cleaning some codes
-
-### 2.0.2 (14 Jan 2024)
-- ~~Implementing "Mark" command~~ (cancelled)
-- Added Introductions creator
-- Added Autoresponds (Final)
-- Legacyyozora and yozora has been shutdown and archived
-
-### 2.0.1 (20 Jan 2024)
-- Adding Autoresponds (Testing)
-- Fixing some issue and cleaning some codes (thanks @ini.tokyo)
-
-### 2.0.0 (20 Des 2023)
-- Added Help command
-- Added Ping command
+[Update Changelog](https://github.com/rickynolep/Yozora/blob/main/CHANGELOG.md)
