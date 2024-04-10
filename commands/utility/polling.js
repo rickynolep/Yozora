@@ -21,10 +21,10 @@ function generateBar(percentage1, percentage2) {
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('polling')
-        .setDescription('Membuat atau mengakhiri polling atau voting')
+        .setDescription('Membuat atau mengakhiri polling atau voting [Deprecated]')
         .addSubcommand(subcommand =>
             subcommand.setName('start')
-                .setDescription('Membuat sebuah polling atau voting')
+                .setDescription('Membuat sebuah polling atau voting [Deprecated]')
                 .addStringOption(option =>
                     option.setName('title')
                         .setDescription('Judul dari poling')
@@ -43,7 +43,7 @@ module.exports = {
                         .setRequired(false)))
         .addSubcommand(subcommand =>
             subcommand.setName('end')
-                .setDescription('Mengakhiri polling yang sedang aktif')),
+                .setDescription('Mengakhiri polling yang sedang aktif [Deprecated]')),
 
     async execute(interaction) {
         if (interaction.options.getSubcommand() === 'end') {
@@ -76,7 +76,7 @@ module.exports = {
             let initialBar = generateBar(percentage1, percentage2);
             const embed = new EmbedBuilder()
                 .setTitle(title)
-                .addFields({ name: 'Progress voting saat ini', value: `${percentage1.toFixed(2)}%ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${initialBar}<:RE:1213064897353621504>`})
+                .addFields({ name: 'Progress voting saat ini', value: `${percentage1.toFixed(2)}% - ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${initialBar}<:RE:1213064897353621504>`})
                 .setColor('#0099ff')
                 .setFooter({ text: `Voting akan berakhir dalam ${voteDurations} menit ・ ${formattedEndTime} WITA`});
             const row = new ActionRowBuilder()
@@ -109,7 +109,7 @@ module.exports = {
                     percentage1 = (redVotes / totalVotes) * 100;
                     percentage2 = (blueVotes / totalVotes) * 100;
                     const indicatorBar = generateBar(percentage1, percentage2);
-                    embed.setFields({ name: 'Progress voting saat ini', value: `${percentage1.toFixed(2)}%ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${indicatorBar}<:RE:1213064897353621504>`});
+                    embed.setFields({ name: 'Progress voting saat ini', value: `${percentage1.toFixed(2)}% - ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${indicatorBar}<:RE:1213064897353621504>`});
                     await initialMessage.edit({ embeds: [embed] });
                     buttonInteraction.deferUpdate();
                 }
@@ -118,7 +118,7 @@ module.exports = {
             collector.on('end', async () => {
                 const indicatorBar = generateBar(percentage1, percentage2);
                 embed.setFooter({ text: 'Polling telah berakhir!'});
-                embed.setFields({ name: 'Hasil voting', value: `${percentage1.toFixed(2)}%ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${indicatorBar}<:RE:1213064897353621504>`});
+                embed.setFields({ name: 'Hasil voting', value: `${percentage1.toFixed(2)}% - ${percentage2.toFixed(2)}%\n<:LE:1213064825488277544>${indicatorBar}<:RE:1213064897353621504>`});
                 await initialMessage.edit({ embeds: [embed] });
                 activeCollectors.delete(interaction.guildId);
                 const disabledButton = new ActionRowBuilder()

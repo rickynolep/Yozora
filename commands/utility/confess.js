@@ -1,4 +1,4 @@
-const { ChannelType, SlashCommandBuilder, EmbedBuilder, MessageAttachment, AttachmentBuilder } = require('discord.js');
+const { ChannelType, SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js');
 const { errorTargetChannel, errorExecuting, errorInvalidColor, confessChannelId } = require('../../config.json');
 function getColorHex(colorName) {
 	const isHexCode = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(colorName);

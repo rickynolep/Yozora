@@ -6,10 +6,11 @@
     "errorExecuting" : "Ah! sorry banget masbro ada masalah saat mengeksekusi Commandnya, coba tanya ricky soal masalah ini >,<",
     "errorInvalidColor" : "Warna tidak valid. Pastikan Anda menggunakan [kode hex](https://www.google.com/search?q=Pemilih+warna) yang valid.",
     "errorTargetChannel" : "Ah! sorry banget masbro, ada masalah sama channel tujuan atau channel tujuan tidak tersedia, coba tanya ricky soal masalah ini >,<",
-    
+
     "joinActivityId" : "1118248247388012744",
     "confessChannelId" : "1129380135699755098",
     "onlineChannelId" : "1117809432932393134",
+
     "autoResponses": [
         {
             "trigger": "pagi",
