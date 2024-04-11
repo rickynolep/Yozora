@@ -14,21 +14,4 @@ yozora adalah bot discord interaksi http yang dibuat oleh Ricky menggunakan disc
 Pull Request diterima dan bot ini sangat membutuhkan kontribusi, Kamu dapat bergabung dengan server ini untuk dukungan dan membantu pengembangan proyek
 https://discord.com/invite/pAxmeD3kDj
 
-## Changelog:
-### 2.0.3 (17 Jan 2024)
-- Nambahin command Confession
-- Memperbaiki beberapa bug dan membersihkan kode
-  
-### 2.0.2 (14 Jan 2024)
-- ~~Nambahin command "Mark"~~ (dibatalkan)
-- Nambahin Pembuat Perkenalan (Introductions creator)
-- Nambahin Autoresponds (Final)
-- Legacyyozora dan YozoraV1 telah dimatikan dan diarsipkan
-
-### 2.0.1 (20 Jan 2024)
-- Nambahin Autorespond (tahap percobaan)
-- Memperbaiki beberapa masalah dan membersihkan kode (Makasih @heyk1n)
-
-### 2.0.0 (20 Des 2023)
-- Nembahin command Help
-- Nambahin command Ping
+## Changelog: [Update Changelog](https://github.com/rickynolep/Yozora/blob/main/CHANGELOG.md)

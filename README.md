@@ -14,5 +14,4 @@ Pull request is accepted and this bot is really need a contributions, you can jo
 (keep in mind this server dont support multilingual for now, only indonesian.. contact me for support on english language)
 https://discord.com/invite/pAxmeD3kDj
 
-## Changelog:
-[Update Changelog](https://github.com/rickynolep/Yozora/blob/main/CHANGELOG.md)
+## Changelog: [Update Changelog](https://github.com/rickynolep/Yozora/blob/main/CHANGELOG.md)

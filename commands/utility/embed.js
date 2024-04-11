@@ -15,28 +15,12 @@ module.exports = {
             const rulesEmbed = new EmbedBuilder()
             .setColor('#0099ff')
             .setTitle(`${interaction.guild.name} Rules`)
-            .setThumbnail(interaction.guild.iconURL())
+            //.setThumbnail(interaction.guild.iconURL())
             .setDescription('Berikut ini adalah peraturan server yang harus diikuti agar tidak terkena masalah kedepannya, melanggar aturan berikut dapat mengakibatkan timeout, kick ataupun ban. jadi sebaiknya jangan dibantah ya!\n‎')
+            .setImage('https://i.ibb.co/5rb3ypf/Rikomunity-Rules-Banner.gif')
             .addFields(
-                { name: '💬・Aturan Umum', value: `
-                ➥ Hormati lawan bicaramu
-                ➥ Jangan berlebihan dalam menggunakan kata kasar
-                ➥ Member harus setidaknya 12 tahun untuk menghindari drama
-                ➥ Tidak boleh membicarakan hal yang tidak senonoh seperti NSFW
-                ➥ Tidak boleh rasis dalam bentuk ras, budaya, maupun agama
-                ➥ Tidak boleh membahas tentang politik dan sebagainya
-                ➥ Dilarang keras untuk meraid server ini, hormatilah saya ownernya :(
-                ➥ Dilarang untuk menyalahgunakan bot server / menggunakan bot pada channel yang salah\n‎`, inline: false },
-                { name: '🎧・Aturan Voice', value: `
-                ➥ Hormati lawan bicaramu
-                ➥ Jangan berlebihan dalam menggunakan kata kasar
-                ➥ Member harus setidaknya 12 tahun untuk menghindari drama
-                ➥ Tidak boleh membicarakan hal yang tidak senonoh seperti NSFW
-                ➥ Tidak boleh rasis dalam bentuk ras, budaya, maupun agama
-                ➥ Tidak boleh membahas tentang politik dan sebagainya
-                ➥ Dilarang keras untuk meraid server ini, hormatilah saya ownernya :(
-                ➥ Dilarang untuk menyalahgunakan bot server / menggunakan bot pada channel yang salah`, inline: false },
-            );
+                { name: '💬・Aturan Umum', value: "- Hormati lawan bicaramu\n- Dilarang keras untuk meraid server ini\n- Jangan berlebihan dalam menggunakan kata kasar\n- Gunakanlah bot ditempatnya dengan baik dan benar\n- Tidak boleh menyindir tentang politik dan sebagainya\n- Tidak boleh membicarakan hal tidak senonoh (NSFW)\n- Tidak boleh rasis dalam bentuk ras, budaya, maupun agama\n- Member harus setidaknya 12 tahun untuk menghindari drama\n‎", inline: false },
+                { name: '🎧・Aturan Voice', value: "- Jangan memutar lagu yang membuat pengguna lain menjadi tidak nyaman\n- Jika ada lebih dari dua pengguna dalam voice channel, jangan memutar musik ataupun mengganti musiknya tanpa izin mereka\n- Jika ada pengguna yang berisik, mengganggu, micnya bocor semacamnya, kamu bisa minta manajer menangani hal tersebut", inline: false },);
             await interaction.reply({ embeds: [rulesEmbed] });
         } else if (interaction.options.getSubcommand() === 'roles') {
             const rolesEmbed = new EmbedBuilder()
