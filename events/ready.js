@@ -1,9 +1,8 @@
 const { Events } = require('discord.js');
 const { onlineChannelId } = require('../config.json');
-const { launchType } = require('../vault.json');
 
 let currentMode;
-if (launchType === 'Server') {
+if (process.env.launchType === 'Server') {
 	currentMode = 'Server / Pylexnode Server - Yozora berjalan dengan stabil';
 }
 else {
@@ -15,7 +14,7 @@ module.exports = {
 	once: true,
 	execute(client) {
 		console.log(`Ready! Logged in as ${client.user.tag}`);
-		if (launchType !== 'Local') {
+		if (process.env.launchType !== 'Local') {
 			const channel = client.channels.cache.get(onlineChannelId);
 			if (channel) {
 				channel.send(`<a:rikomunity:1208619104924340276>・Yozora online dalam mode ${currentMode}`);

@@ -1,10 +1,9 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
-const { launchType } = require('../../vault.json');
 
 let currentMode;
-if (launchType === 'Local') { currentMode = 'Local (Computer Ricky)'; }
-else if (launchType === 'Server') { currentMode = 'Server (Pylexnode Server)'; }
+if (process.env.launchType === 'Local') { currentMode = 'Local (Computer Ricky)'; }
+else if (process.env.launchType === 'Server') { currentMode = 'Server (Pylexnode Server)'; }
 else { currentMode = 'Unknown'; }
 
 const helpEmbed = new EmbedBuilder()

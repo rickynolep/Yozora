@@ -1,4 +1,6 @@
-// why did you open this? this is deprecated bro......
+/**
+ * @deprecated Why did you open this??
+ */
 
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder } = require('discord.js');

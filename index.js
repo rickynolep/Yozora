@@ -1,9 +1,9 @@
+require('dotenv').config();
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { ActivityType } = require('discord.js');
 const { activity } = require('./config.json');
-const { token } = require('./vault.json');
 const client = new Client({
 	intents: [
 		GatewayIntentBits.DirectMessages,
@@ -56,4 +56,4 @@ for (const file of eventFiles) {
 	}
 }
 
-client.login(token);
+client.login(process.env.token);
