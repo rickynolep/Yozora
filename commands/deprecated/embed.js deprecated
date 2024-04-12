@@ -1,3 +1,5 @@
+// why did you open this? this is deprecated bro......
+
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder } = require('discord.js');
 module.exports = {
@@ -27,7 +29,7 @@ module.exports = {
             .setColor('#0099ff')
             .setTitle(`${interaction.guild.name} Roles`)
             .setThumbnail(interaction.guild.iconURL())
-            .addFields(/* Add your fields here */);
+            .addFields();
             await interaction.reply({ embeds: [rolesEmbed] });
         }
     },
