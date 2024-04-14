@@ -37,7 +37,7 @@ for (const folder of commandFolders) {
 			client.commands.set(command.data.name, command);
 		}
 		else {
-			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+			console.log(`\x1b[31m[WARNING] ${filePath} is missing data execute property.\x1b[0m`);
 		}
 	}
 }
