@@ -4,11 +4,24 @@ These are Yozora journey from 20 Desember 2023 until the latest update, i've kee
 biggest update so far..
 
 - Added Bump Reminder
+  
+![image](https://github.com/rickynolep/Yozora/assets/94543253/d5e892a3-e463-426d-8775-add0c6ea2eb3)
 - Added Disguise command
+
+  ![image](https://github.com/rickynolep/Yozora/assets/94543253/269d53f3-fef5-4558-9fe0-54ba59a9a6d7)
 - Added Truth or Dare command (BETA)
+
+  ![image](https://github.com/rickynolep/Yozora/assets/94543253/2a66b990-c700-42d9-9c8a-0e53fbeaabf3)
 - Improved Profile command
+  
+  ![image](https://github.com/rickynolep/Yozora/assets/94543253/6627d71b-c7a8-4943-add1-513f1133b3dc)
+
 - Improved Confession command
+
+  ![image](https://github.com/rickynolep/Yozora/assets/94543253/29dbc123-0ae5-46ce-8679-cd41927fa950)
 - Improved Help command, adding select menu
+
+  ![image](https://github.com/rickynolep/Yozora/assets/94543253/fd02a779-7853-4afa-b432-c3bca56a4f31)
 - Remove Polling command, deprecated due to Discord new polling feature
 
 ## 2.0.5-B1 (10 April 2024)
@@ -23,10 +36,10 @@ technically not a 2.0.5 Beta
 
 ## 2.0.4 (20 Mar 2024)
 - Added Polling commands
-
+  
    ![image](https://github.com/rickynolep/yozora-v2/assets/94543253/646534b5-9672-4db0-95d9-0ea14b9abe3d)
 - Added Profile commands
-
+  
    ![image](https://github.com/rickynolep/yozora-v2/assets/94543253/9fb40495-8cf3-44f0-918e-9a62a31497ab)
 
 ## 2.0.4-B1 (10 Mar 2024)
