@@ -5,6 +5,8 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Menguji kecepatan respon bot'),
 	async execute(interaction) {
-		await interaction.reply(`Pong! Kecepatan respon bot saat ini ${interaction.client.ws.ping}ms`);
+        const latencyraw = (interaction.createdTimestamp - Date.now())
+        const latency = (latencyraw / 1000).toFixed(1);
+        await interaction.reply(`Pong! Kecepatan respon bot saat ini ${latency} detik dengan Ping ${Math.round(interaction.client.ws.ping)} ms`);
 	},
 };

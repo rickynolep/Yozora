@@ -1,14 +1,23 @@
 # Changelog:
 These are Yozora journey from 20 Desember 2023 until the latest update, i've keep track of the update for documentations and for fun purpose lol.. Hope you guys liked it - Ricky
+## 2.0.5 (30 April 2024)
+biggest update so far..
+
+- Added Bump Reminder
+- Added Disguise command
+- Added Truth or Dare command (BETA)
+- Improved Profile command
+- Improved Confession command
+- Improved Help command, adding select menu
+- Remove Polling command, deprecated due to Discord new polling feature
+
 ## 2.0.5-B1 (10 April 2024)
 ive got too many distractions and so heres a beta..
-
-- yes this beta only fixing bugs and preparing for feature lol
+- none.. yes this beta only fixing bugs and preparing for feature lol
 
 ## 2.0.4-F1 (30 Mar 2024)
 F1 = Fixed version 1
 technically not a 2.0.5 Beta
-
 - Fixed Confess command embed showing blank image
 - Fixed Intro command showing error message when color not valid
 

@@ -4,36 +4,26 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('profile')
-        .setDescription('Displays user profile information')
-        .addSubcommand(subcommand =>
-            subcommand.setName('me')
-                .setDescription('Displays your own profile'))
-        .addSubcommand(subcommand =>
-            subcommand.setName('user')
-                .setDescription('Displays the profile of a specified user')
-                .addUserOption(option =>
-                    option.setName('user')
-                        .setDescription('User to display profile')
-                        .setRequired(true))),
+        .setDescription('Membuat sebuah ringkasan mengenai informasi profilmu atau orang lain')
+        .addUserOption(option =>
+            option.setName('user')
+                .setDescription('Profil orang yang ingin dicari')
+                .setRequired(false)),
     async execute(interaction) {
-        if (interaction.options.getSubcommand() === 'me') {
-            await displayUserProfile(interaction, interaction.user);
-        } else if (interaction.options.getSubcommand() === 'user') {
+        if (interaction.options.data.length > 0) {
             const user = interaction.options.getUser('user');
-            await displayUserProfile(interaction, user);
+            await displayUser(interaction, user);
+        } else {
+            await displayUser(interaction, interaction.user);
         }
     },
 };
 
-async function displayUserProfile(interaction, user) {
+async function displayUser(interaction, user) {
     const member = await interaction.guild.members.fetch(user);
-
-    // Get the current time in WITA timezone
-    const currentDate = new Date();
     const options = { timeZone: 'Asia/Makassar', timeZoneName: 'short' };
-
     const profileEmbed = new EmbedBuilder()
-        .setColor('#0099ff')
+        .setColor('#9B7AAC')
         .setTitle(`${user.username}'s Profile`)
         .setThumbnail(user.displayAvatarURL({ dynamic: true }))
         .addFields(
@@ -43,6 +33,5 @@ async function displayUserProfile(interaction, user) {
             { name: 'Pembuatan Akun', value: user.createdAt.toLocaleString('id-ID', options), inline: true },
             { name: 'Bergabung pada Server', value: member.guild.joinedAt.toLocaleString('id-ID', options), inline: true },
         );
-
     await interaction.reply({ embeds: [profileEmbed] });
 }
